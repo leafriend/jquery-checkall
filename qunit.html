@@ -41,11 +41,33 @@ $(function() {
         );
     });
 
-    test("Checkbox All checks all or not", function() {
+    test("Checkbox All monitors all checkbox", function() {
         $("#checkbox---").checkAll();
         testChecked.call(this,
             0, 0, 0, 0, 0,
             0, 1, 1, 1, 1,
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0
+        );
+    });
+
+    test("Checkbox All checks all", function() {
+        $("#checkbox---").click();
+        testChecked.call(this,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1
+        );
+    });
+
+    test("Checkbox All checks all not", function() {
+        $("#checkbox---").click();
+        testChecked.call(this,
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0,
             0, 0, 0, 0, 0,
             0, 0, 0, 0, 0,
             0, 0, 0, 0, 0
