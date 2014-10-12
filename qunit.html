@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>jQuery-checkAll</title>
+
+<script src="lib/jquery-1.11.0.js"></script>
+
+<link rel="stylesheet" href="lib/qunit-1.15.0.css">
+<script src="lib/qunit-1.15.0.js"></script>
+
+<script src="jquery-checkall.js"></script>
+<script>
+
+function testChecked() {
+
+    var checkboxes = $("input[type=checkbox]");
+    var checkbox;
+    var checked;
+    var label;
+
+    for (var i = 0; i < arguments.length; i++) {
+        checkbox = checkboxes[i];
+        label = $("label[for=" + checkbox.id + "]").text();
+        checked = !!arguments[i];
+        strictEqual($(checkbox).prop("checked"), checked,
+            "Checkbox " + label + " should " + (checked ? "" : "not") + " checked");
+    }
+
+}
+
+$(function() {
+
+    test("Initial state", function() {
+        testChecked.call(this,
+            0, 0, 0, 0, 0,
+            0, 1, 1, 1, 1,
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0
+        );
+    });
+
+});
+
+
+</script>
+
+</head>
+<body>
+
+<table>
+<tr>
+    <th><input type="checkbox" id="checkbox---" class="col-- row--" /><label for="checkbox---">All</label></th>
+    <th><input type="checkbox" id="checkbox-a-" class="col-a row--" /><label for="checkbox-a-">Column A</label></th>
+    <th><input type="checkbox" id="checkbox-b-" class="col-b row--" /><label for="checkbox-b-">Column B</label></th>
+    <th><input type="checkbox" id="checkbox-c-" class="col-c row--" /><label for="checkbox-c-">Column C</label></th>
+    <th><input type="checkbox" id="checkbox-d-" class="col-d row--" /><label for="checkbox-d-">Column D</label></th>
+</tr>
+<tr>
+    <th><input type="checkbox" id="checkbox--1" class="col-- row-1" /><label for="checkbox--1">Row 1</label></th>
+    <td><input type="checkbox" id="checkbox-a1" class="col-a row-1" checked /><label for="checkbox-a1">Cell A1</label></td>
+    <td><input type="checkbox" id="checkbox-b1" class="col-b row-1" checked /><label for="checkbox-b1">Cell B1</label></td>
+    <td><input type="checkbox" id="checkbox-c1" class="col-c row-1" checked /><label for="checkbox-c1">Cell C1</label></td>
+    <td><input type="checkbox" id="checkbox-d1" class="col-d row-1" checked /><label for="checkbox-d1">Cell D1</label></td>
+</tr>
+<tr>
+    <th><input type="checkbox" id="checkbox--2" class="col-- row-2" /><label for="checkbox--2">Row 2</label></th>
+    <td><input type="checkbox" id="checkbox-a2" class="col-a row-2" /><label for="checkbox-a2">Cell A2</label></td>
+    <td><input type="checkbox" id="checkbox-b2" class="col-b row-2" /><label for="checkbox-b2">Cell B2</label></td>
+    <td><input type="checkbox" id="checkbox-c2" class="col-c row-2" /><label for="checkbox-c2">Cell C2</label></td>
+    <td><input type="checkbox" id="checkbox-d2" class="col-d row-2" /><label for="checkbox-d2">Cell D2</label></td>
+</tr>
+<tr>
+    <th><input type="checkbox" id="checkbox--3" class="col-- row-3" /><label for="checkbox--3">Row 3</label></th>
+    <td><input type="checkbox" id="checkbox-a3" class="col-a row-3" /><label for="checkbox-a3">Cell A3</label></td>
+    <td><input type="checkbox" id="checkbox-b3" class="col-b row-3" /><label for="checkbox-b3">Cell B3</label></td>
+    <td><input type="checkbox" id="checkbox-c3" class="col-c row-3" /><label for="checkbox-c3">Cell C3</label></td>
+    <td><input type="checkbox" id="checkbox-d3" class="col-d row-3" /><label for="checkbox-d3">Cell D3</label></td>
+</tr>
+<tr>
+    <th><input type="checkbox" id="checkbox--4" class="col-- row-4" /><label for="checkbox--4">Row 4</label></th>
+    <td><input type="checkbox" id="checkbox-a4" class="col-a row-4" /><label for="checkbox-a4">Cell A4</label></td>
+    <td><input type="checkbox" id="checkbox-b4" class="col-b row-4" /><label for="checkbox-b4">Cell B4</label></td>
+    <td><input type="checkbox" id="checkbox-c4" class="col-c row-4" /><label for="checkbox-c4">Cell C4</label></td>
+    <td><input type="checkbox" id="checkbox-d4" class="col-d row-4" /><label for="checkbox-d4">Cell D4</label></td>
+</tr>
+</table>
+
+<div id="qunit"></div>
+
+</body>
+</html>
