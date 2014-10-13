@@ -1,4 +1,13 @@
-
+/*!
+ * jQuery-checkAll Plugin Library - snapshot
+ * http://github.com/leafriend/jquery-checkall
+ *
+ * Copyright 2005, 2014 leafriend
+ * Released under the MIT license
+ * http://raw.githubusercontent.com/leafriend/jquery-checkall/master/LICENSE
+ *
+ * Date: 2014-10-13T01:00Z
+ */
 (function($) {
     $.fn.checkAll = function() {
 
